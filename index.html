@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="ja">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>JavaScriptではじめるプログラミング入門</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h1>JavaScriptではじめる<br>プログラミング入門</h1>
+				</section>
+
+				<section>
+					<h2>自己紹介</h2>
+				</section>
+
+				<section>
+					<h2>宇都宮 諒<br>(Utsunomiya Ryo)</h2>
+					<br>
+					<h3>Webエンジニア@アシアル株式会社</h3>
+					<img src="img/asial_blog.png" alt="asial_blog">
+				</section>
+
+				<section>
+					<h2>今日のテーマ<br>「プログラミング入門」</h2>
+				</section>
+
+				<section>
+					<h2>そもそもプログラムとは？</h2>
+				</section>
+
+				<section>
+					<div style="float:left">
+						<q>教育者, 将軍, 栄養士, 心理学者, 親はプログラムする</q>
+						<p>―『計算機プログラムの構造と解釈 第二版』序文</p>
+					</div>
+					<div style="float:right">
+						<img src="img/sicp.jpeg" alt="sicp">
+					</div>
+				</section>
+
+				<section>
+					<q>ある物事の進行状態についての順序・組み合わせ・筋などのこと。<br><a href="http://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0">Wikipedia 日本語版</a></q>
+				</section>
+
+				<section>
+					<p>プログラムとは、料理のレシピのようなもの<img src="img/recipe.png" alt=""></p>
+					<p>プログラムの中で、コンピュータに実行させるものを、特にコンピュータ・プログラムと呼ぶことがある</p>
+				</section>
+
+				<section>
+					<h3>なぜ、コンピュータにプログラムを実行させるの？</h3>
+				</section>
+
+				<section>
+					<p>コンピュータは、決められた手順を正確に実行するのが得意</p>
+					<img src="img/robot.jpg" alt="robot">
+				</section>
+
+				<section>
+					<h3>誰がやっても同じ結果が得られる、<br>決まりきった処理（例：計算）は、<br>コンピュータにやらせよう</h3>
+				</section>
+
+				<section>
+					<h2>プログラムの作り方</h2>
+					<ol>
+						<li>コンピュータにやらせたいことを決める</li>
+						<li>コンピュータに対する指示を、コンピュータが理解できる形式で書く</li>
+					</ol>
+				</section>
+
+				<section>
+					<h3>コンピュータが理解できる形式？</h3>
+				</section>
+
+				<section>
+					<h2>プログラミング言語</h2>
+					<ul>
+						<li>機械語</li>
+						<li>アセンブラ</li>
+						<li>C言語</li>
+						<li>JavaScript</li>
+						<li>その他、多数のプログラミング言語が存在する</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>JavaScript</h2>
+					<ul>
+						<li>Webブラウザー上で実行可能なプログラミング言語</li>
+						<li>このスライドも、JavaScriptで出来ている</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>実際に書いてみよう</h2>
+					<p><a href="http://jsfiddle.net/">http://jsfiddle.net/</a></p>
+				</section>
+
+				<section>
+					<h2>hello html</h2>
+					<pre><code data-trim contenteditable>
+<div>hello html</div>
+					</code></pre>
+					<img src="img/hello_html.png" alt="hello_html">
+				</section>
+
+				<section>
+					<h2>hello javascript</h2>
+					<pre><code data-trim contenteditable>
+<div id="out">hello html</div>
+					</code></pre>
+
+					<pre><code data-trim contenteditable>
+var out = document.getElementById("out");
+out.innerHTML = "hello javascript";
+					</code></pre>
+					<img src="img/hello_javascript.png" alt="hello_javascript">
+					<p>ポイント：JavaScriptによって、HTMLを書き換えることができる</p>
+				</section>
+
+				<section>
+					<h2>変数</h2>
+					<ul>
+						<li>好きな値を入れることのできる箱のことを「変数」と呼ぶ</li>
+						<li>変数の名前は英単語を使うことが多い</li>
+						<li>初めて使う変数をコンピュータに教えることを「変数の宣言」という</li>
+						<li>JavaScriptでは、変数の宣言には「var」キーワードを使う(variableの頭3文字)</li>
+					</ul>
+					<p>var out は、「outという変数を使うよ」とコンピュータに教えている</p>
+				</section>
+
+				<section>
+					<h2>代入</h2>
+					<ul>
+						<li>「=(イコール)」を使って、右辺の値を左辺に「代入」する</li>
+						<li>「x = 1 + 1」のイメージ</li>
+						<li>JavaScriptでは、「=(イコール)」は「代入」</li>
+						<li>「等しい」という意味では、「==(ほぼ等しい)」又は「===(完全に等しい)」を使う</li>
+					</ul>
+					<p>※ == と === の違いは両辺の値の型を比較するか否か。1=='1'はtrue、1==='1'はfalse</p>
+				</section>
+
+				<section>
+					<h3>document.getElementById()</h3>
+					<ul>
+						<li>documentとは、HTML文書全体のこと</li>
+						<li>.(ドット)の左側の要素に、右側の命令を実行させる</li>
+						<li>getElementByID()は、idを目印に要素を取得する命令</li>
+						<li>getElementByID()の()の中には、取得させたい要素のidを書く</li>
+						<li>JavaScriptのプログラムの中に文字を含める場合は、'(クォート)又は"(ダブルクォート)で囲む。'又は"で囲まれた一連の文字を「文字列」と呼ぶ</li>
+					</ul>
+					<p>文字列の例："s", "こんにちは", "123", ""(空文字列)</p>
+				</section>
+
+				<section>
+					<h2>セミコロンと改行</h2>
+					<ul>
+						<li>JavaScriptの行の区切りは「;(セミコロン)」</li>
+						<li>改行も行の区切りとみなされる</li>
+						<li>セミコロンを付けなくても動くが、不具合の原因になることがある</li>
+					</ul>
+					<pre><code data-trim contenteditable>
+// セミコロン無しでも動くけど…
+var out = document.getElementById("out")
+out.innerHTML = "hello javascript"
+
+// 改行を無くすと動かなくなる
+var out = document.getElementById("out")out.innerHTML = "hello javascript"
+
+// セミコロンが付いていると、改行を無くしても動く
+var out = document.getElementById("out");out.innerHTML = "hello javascript";
+					</code></pre>
+
+				</section>
+
+				<section>
+					<h2>1行目のまとめ</h2>
+					<pre><code data-trim contenteditable>
+var out = document.getElementById("out");
+					</code></pre>
+					<ol>
+						<li>document(HTML文書全体)に対して、"out"というidの要素を取得する命令を実行させる</li>
+						<li>取得した要素を、outという変数に入れる</li>
+					</ol>
+					<p>※outは初めて使う変数なので、varキーワードで変数宣言をしている</p>
+				</section>
+
+				<section>
+					<h2>innerHTML</h2>
+					<pre><code data-trim contenteditable>
+<div id="out">hello html</div>
+					</code></pre>
+					<pre><code data-trim contenteditable>
+var out = document.getElementById("out");
+out.innerHTML = "hello javascript";
+					</code></pre>
+
+					<ul>
+						<li>HTMLの要素の中には、様々な値が「変数」として格納されている</li>
+						<li>要素の持っている変数にアクセスするには、.(ドット)を使う</li>
+						<li>innerHTMLは、「HTML要素の内側」に入れる内容を格納する変数</li>
+						<li>&lt;div&gt; &lt;!-- ここがinnerHTML --&gt; &lt;/div&gt;</li>
+						<li>JavaScriptの実行前には、innerHTMLには「hello html」が入っている</li>
+						<li>innerHTMLに、=で「代入」すると、「hello html」が「hello javascript」に書き換えらる</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>代入ではなく、追加するには？</h2>
+					<p>「+=」を使う</p>
+					<pre><code data-trim contenteditable>
+var out = document.getElementById("out");
+out.innerHTML += "hello javascript";
+					</code></pre>
+					<img src="img/add.png" alt="add">
+				</section>
+
+				<section>
+					<h2>文字列の連結</h2>
+					<ul>
+						<li>文字列を連結するには、+(プラス)を使う</li>
+						<li>+=を使うと、左辺の文字列に右辺の文字列を追加する</li>
+						<li>+の両辺が数値である場合には、+は文字列連結ではなく加算になる</li>
+					</ul>
+					<pre><code data-trim contenteditable>
+var out = document.getElementById("out");
+out.innerHTML = 1 + 1; // 「2」と表示
+out.innerHTML = 1 + "1"; // 「11」と表示
+out.innerHTML += 1; // innerHTMLの中身は文字列とみなされるので、必ず連結になる
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>改行を付け足したい</h2>
+					<p>&lt;br&gt;タグを使う</p>
+					<pre><code data-trim contenteditable>
+var out = document.getElementById("out");
+out.innerHTML += "<br>";
+out.innerHTML += "hello javascript";
+					</code></pre>
+				<img src="img/br.png" alt="br">
+				</section>
+
+				<section>
+					<h2>課題1: 各行に、1から10までの数字を1つずつ表示するプログラムを書きなさい</h2>
+				</section>
+
+				<section>
+					<h2>解答例</h2>
+<!-- 										<pre><code data-trim contenteditable>
+<div id="out"></div>
+					</code></pre>
+					<pre><code data-trim contenteditable>
+var out = document.getElementById("out");
+out.innerHTML += "1<br>";
+out.innerHTML += "2<br>";
+out.innerHTML += "3<br>";
+out.innerHTML += "4<br>";
+out.innerHTML += "5<br>";
+out.innerHTML += "6<br>";
+out.innerHTML += "7<br>";
+out.innerHTML += "8<br>";
+out.innerHTML += "9<br>";
+out.innerHTML += "10<br>";
+					</code></pre>
+ -->					<img src="img/exam1.png" alt="exam1">
+				</section>
+
+				<section>
+					<h2>問題点：めんどくさい</h2>
+					<p>10くらいなら手でもやれるけど、10000くらいになると、手ではやってられない</p>
+				</section>
+
+				<section>
+					<h3>繰り返し数字を表示するような、決まりきった作業は、コンピュータにやらせるべき</h3>
+				</section>
+
+				<section>
+					<h2>繰り返し（ループ）</h2>
+					<pre><code data-trim contenteditable>
+var out = document.getElementById("out");
+var n = 1; // nという変数を宣言し、1を代入
+while (n <= 10) { // nが10以下のとき、{}で囲まれた部分を実行する
+	out.innerHTML += n; // innerHTMLに数字を追加
+	out.innerHTML += "<br>"; // 改行を追加
+	n += 1; // nに1を足す
+}
+					</code></pre>
+					<ul>
+						<li>「while(){}」でひとまとまりの「文」</li>
+						<li>「n <= 10」のように、真／偽いずれかの判定が可能なものを「条件」と呼ぶ</li>
+						<li>()の中の条件が「真」である間(while)、{}で囲まれた部分の処理を実行する</li>
+						<li>「n += 1;」を書き忘れると、永遠に同じ処理を実行し続けるので注意（無限ループ）</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>課題2：九九の1の段を表示するプログラムを書きなさい</h3>
+					<p>＜出力例＞</p>
+					<img src="img/1nodan.png" alt="1nodan">
+					<p>ヒント：JavaScriptの四則演算記号は以下の通り。</p>
+					<pre><code data-trim contenteditable>
+1 + 1; // 加算
+1 - 1; // 減算
+1 * 1; // 乗算（掛け算）は、*(アスタリスク)を使う
+1 / 1; // 除算（割り算）は、/(スラッシュ)を使う
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>解答例</h2>
+										<pre><code data-trim contenteditable>
+var out = document.getElementById("out");
+var n = 1;
+while (n <= 9) {
+    out.innerHTML += "1 × ";
+    out.innerHTML += n;
+    out.innerHTML += " = ";
+    out.innerHTML += 1 * n; // 掛け算の結果を追加
+    out.innerHTML += "<br>";
+    n += 1;
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>課題3：九九を表示するプログラムを書きなさい</h3>
+					<p>ヒント：while文を2つ組み合わせると楽ができる</p>
+				</section>
+
+				<section>
+					<h2>解答例</h2>
+					<pre><code data-trim contenteditable>
+var out = document.getElementById("out");
+var n = 1;
+var m;
+while (n <= 9) {
+    m = 1;
+    while (m <= 9) {
+        out.innerHTML += n;
+        out.innerHTML += " × ";
+        out.innerHTML += m;
+        out.innerHTML += " = ";
+        out.innerHTML += n * m;
+        out.innerHTML += "<br>";
+        m += 1;
+    }
+    n += 1;
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>課題4：掛け算の式と答えを表示するプログラムを書きなさい</h2>
+					<p>ヒント：次のページで書き方を教えます</p>
+				</section>
+
+				<section>
+					<h2>function(関数)</h2>
+					<ul>
+						<li>functionは、「処理に名前をつけて保存する」機能</li>
+						<li>functionの定義には、function(){}という構文を使う</li>
+						<li>()の中で、functionの中で使用する変数を宣言する</li>
+						<li>return の後に書かれた値が、functionの値として「返る」</li>
+					</ul>
+					<pre><code data-trim contenteditable>
+var out = document.getElementById("out");
+
+// add という名前のfunctionを定義する
+function add (n, m) { // nとmという変数を宣言
+	return n + m; // n + m の結果を「返す」
+}
+out.innerHTML = add(1, 1); // 「1 + 1」の結果である「2」が表示される
+					</code></pre>
+
+				</section>
+
+				<section>
+					<h2>掛け算の式と答えを表示するfunction</h2>
+					<pre><code data-trim contenteditable>
+function printMultiply (n, m) {
+    var out = document.getElementById("out");
+    out.innerHTML += n;
+    out.innerHTML += " × ";
+    out.innerHTML += m;
+    out.innerHTML += " = ";
+    out.innerHTML += n * m;
+    out.innerHTML += "<br>";
+}
+printMultiply(4, 2); // 4 × 2 = 8
+printMultiply(593, 320); // 593 × 320 = 189760
+					</code></pre>
+
+				</section>
+
+				<section>
+					<h2>条件分岐</h2>
+					<p>n <= 9 のような「条件」に基いて、処理を実行するか否かを決定する構文</p>
+					<pre><code data-trim contenteditable>
+var out = document.getElementById("out");
+var hour = 12;
+var greeting = "";
+if (hour <= 9) { // hour は 12 なので、 12 <= 9 は 偽
+	greetnig = "Good Morning!";
+}
+if (hour <= 19) { // hour は 12 なので、 12 <= 19 は 真
+	greeting = "Hello!";
+}
+if (hour > 19) { // hour は 12 なので、 12 > 19 は 偽
+	greeting = "Good Afternoon!"
+}
+out.innerHTML = greeting; // greetingには"Hello"が入っているので、"Hello"と表示される
+					</code></pre>
+					<p>if (条件) {条件が真の時実行される処理} という構造になっている</p>
+				</section>
+
+				<section>
+					<h2>…が偽なら、あるいは…</h2>
+					<p>if()の条件が満たされなかった場合に実行される処理を書くelse文</p>
+										<pre><code data-trim contenteditable>
+var out = document.getElementById("out");
+var hour = 12;
+var greeting = "";
+if (hour <= 9) { // hour は 12 なので、 12 <= 9 は 偽
+    greetnig = "Good Morning!";
+} else { // 1つ前の条件が偽だったので、こちらが実行される
+    greeting = "Hello!";
+}
+out.innerHTML = greeting; // greetingには"Hello"が入っているので、"Hello"と表示される
+					</code></pre>
+
+				</section>
+
+				<section>
+					<h2>else if</h2>
+					<p>if文を連続させる</p>
+
+					<pre><code data-trim contenteditable>
+var out = document.getElementById("out");
+var hour = 12;
+var greeting = "";
+if (hour <= 9) { // hour は 12 なので、 12 <= 9 は 偽
+    greetnig = "Good Morning!";
+} else if (hour <= 19){ // 1つ前の条件が偽だったので、次に判定される
+    // hour は 12 なので、 12 <= 19 は 真となり、greetingには"Hello"が入る
+    greeting = "Hello!";
+} else if (hour > 19) { // 1つ前の条件が真だったので、ここは判定も実行もされない
+    greeting = "Good Afternoon!"
+}
+out.innerHTML = greeting; // greetingには"Hello"が入っているので、"Hello"と表示される
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>複数の条件を組み合わせる</h2>
+					<p>条件を複数組み合わせたい場合、&&(かつ)、||(または)を使う</p>
+					<pre><code data-trim contenteditable>
+var out = document.getElementById("out");
+var hour = 12;
+var minute = 0;
+if (hour === 12 && minute === 0) {
+    out.innerHTML = "正午です";
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>最終課題：FizzBuzz</h2>
+					<ol>
+						<li>変数nを定義し、1から始まって15まで、1ずつ増加するwhileループを書きなさい</li>
+						<li>
+							whileループの中で、nの値を調べ、以下の条件に基いて表示を行いなさい
+							<ul>
+								<li>nが3で割り切れる場合は、"Fizz"と表示する</li>
+								<li>nが5で割り切れる場合は、"Buzz"と表示する</li>
+								<li>nが3と5の両方で割り切れる場合は、"FizzBuzz"と表示する</li>
+								<li>いずれにも当てはまらない場合は、nの値を表示する</li>
+							</ul>
+						</li>
+					</ol>
+					<p>ヒント：割った余りを調べるには、%(パーセント)を使う。例：1 % 2 は 1、 2 % 2 は 0、3 % 2 は 1、4 % 2 は 0</p>
+				</section>
+
+				<section>
+					<h2>解答例</h2>
+					<img src="img/fizzbuzz.png" alt="">
+<!-- 					<pre><code data-trim contenteditable>
+var out = document.getElementById("out");
+var n = 1;
+while (n <= 15) {
+    if (n % 3 === 0 && n % 5 === 0) {
+        out.innerHTML += "FizzBuzz";
+    } else if (n % 5 === 0) {
+        out.innerHTML += "Buzz";
+    } else if (n % 3 === 0) {
+        out.innerHTML += "Fizz";
+    } else {
+        out.innerHTML += n;
+    }
+    out.innerHTML += "<br>";
+    n += 1;
+}
+				</code></pre> -->
+				</section>
+
+				<section>
+					<h2>プログラミングのコツ</h2>
+					<ul>
+						<li>繰り返しやることは、コンピュータにやらせる</li>
+						<li>同じ処理を何度も繰り返すなら、その処理に「名前をつけて保存」し、何度も使い回す</li>
+						<li>コンピュータにやらせた方が楽なことは、コンピュータにやらせる</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>さらに学びたい方へ</h2>
+					<ul>
+						<li><a href="http://dotinstall.com/lessons/basic_javascript_v2">ドットインストール - JavaScript入門</a></li>
+						<li>【宣伝】『スラスラわかるJavaScript』<br>（監修：<span style="font-weight:bold;color:red;">アシアル株式会社</span>）</li>
+					</ul>
+					<img src="img/surasurajs.jpg" alt="">
+				</section>
+
+				<section>
+					<h2>ご清聴ありがとうございました。</h2>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
